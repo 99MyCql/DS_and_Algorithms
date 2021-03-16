@@ -29,6 +29,7 @@
     - `others` - 其它
       - [矩阵快速转置](study\algorithms\others\矩阵快速转置.md)
       - [KMP](study\algorithms\others\kmp.md)
+      - [随机算法](study\algorithms\others\随机算法.md)
 
   - `machine_learning` - 机器学习
     - [BP](./study/machineLearning/BP/README.md)

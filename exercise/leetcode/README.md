@@ -344,6 +344,22 @@ BFS。
 
 用正则表达式去实现，提交后一直爆出各种问题，包括时不时的编译错误。。。终于知道为何这道题的通过率这么低了。
 
+## 剑指offer26 - 树的子结构 - 中等 - C++
+
+递归。
+
+## 剑指offer29 - 顺时针打印矩阵 - 简单 - C++
+
+参考：[leetcode题解 - 面试题29. 顺时针打印矩阵（模拟、设定边界，清晰图解）](https://leetcode-cn.com/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/solution/mian-shi-ti-29-shun-shi-zhen-da-yin-ju-zhen-she-di/)
+
+设置上下左右边界，沿边界打印，打印完一个边界就收缩一个边界，出现边界冲突（上边界大于下边界）则终止。
+
+## 剑指offer33 - 二叉搜索树的后序遍历序列 - 中等 - C++
+
+递归 + 分治。
+
+二叉搜索树**左小右大**，后序遍历**左右根**。
+
 ## 剑指offer44 - 数字序列中某一位的数字 - 中等 - C++
 
 第一种思路：设置当前下标`i`，当前数字`num`，当前数字的位数`num_count`。当`i<n`时，`num++`，若`num`的位数增加了，则`num_count++`，最后`i += num_count`。循环结束后，根据`i`和`n`的差值，就可以求出对应的数字。
@@ -365,6 +381,25 @@ BFS。
 只需要O(1)空间的动态规划。
 
 遍历每天的股票价格，用一个变量`min`记住当天之前的股票最小值，用一个变量`max`记住股票的最大利润。如果 `当天股价 - min > max`，则使`max = 当天股价 - min`。
+
+## 剑指offer65 - 不用加减乘除做加法 - 简单 - C++
+
+位运算。
+
+非常简洁的标准答案：
+
+```c++
+int add(int a, int b) {
+    int sum = a^b, c; // sum = a^b 防止 b 为 0
+    while (b != 0) {
+        sum = a ^ b;
+        c = (a & b & 0x7fffffff) << 1;
+        a = sum;
+        b = c;
+    }
+    return sum;
+}
+```
 
 ## LCP5发LeetCoin - 困难 - C++
 
