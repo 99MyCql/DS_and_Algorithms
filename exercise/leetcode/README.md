@@ -376,6 +376,16 @@ BFS。
 
 动态规划的思路想了许久，发现不对劲，于是去看[题解](https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/solution/tu-jie-hua-dong-chuang-kou-shuang-zhi-zhen-shi-xia/)。题解使用的是**滑动窗口**算法，虽然本质上是**暴力算法**的改进，但这方法实在太妙了。
 
+## 剑指offer60 - n个骰子的点数 - 中等 - C++
+
+动态规划。
+
+一定要先确定状态转移方程，如下：
+
+`dp[i][j] = dp[i-1][j-1] + dp[i-1][j-2] + dp[i-1][j-3] + dp[i-1][j-4] + dp[i-1][j-5] + dp[i-1][j-6]`
+
+`i` 表示 i 个骰子，`j` 表示总和为 j ，`dp[i][j]` 表示 i 个骰子点数总和为 j 的事件数。状态转移方程表示：第 i 个骰子摇到 1、2、3、4、5、6 ，剩余 i-1 个骰子总和为 j-1、j-2、j-3、j-4、j-5、j-6 的事件数之和。
+
 ## 剑指offer63 - 股票的最大利润 - 中等 - C++
 
 只需要O(1)空间的动态规划。
